@@ -1,0 +1,4 @@
+@mixin getDesiredFontSize($fontVal: 1.6) {
+  font-size: ($fontVal / 10) + rem !important;
+  font-size: ($fontVal * 1) + px !important;
+}

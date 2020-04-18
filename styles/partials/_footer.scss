@@ -1,0 +1,22 @@
+@import "../variables";
+
+// footer navbar css here
+.navbar-fixed-bottom {
+  background-color: $bgColor !important;
+  width: 100% !important;
+  padding-top: 15px;
+}
+.right {
+  color: $mygray;
+  float: right;
+  @include getDesiredFontSize(11);
+}
+.left {
+  float: left;
+}
+
+.fa {
+  color: $mygray;
+  font-size: 2rem !important;
+  padding-right: 10px;
+}

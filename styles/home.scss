@@ -1,0 +1,33 @@
+@import "variables";
+
+.station{
+    width: 90%;
+    
+    
+    &-record{
+        padding: 10px 20px;
+        margin: 20px;
+        -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+        -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    }
+}
+.contact{
+    text-align: center;
+    width: 100%;
+    margin-top: 70px;
+    
+    
+}
+.icon:before{
+    color: $deeppink;
+    padding-left: 10px;
+}
+.icon-green:before{
+    color: $mygreen;
+    padding-left: 10px;
+}
+.icon-red:before{
+    color: $myred;
+    padding-left: 10px;
+}

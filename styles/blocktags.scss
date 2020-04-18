@@ -1,0 +1,45 @@
+@import "variables";
+
+h1 {
+  @include getDesiredFontSize(24);
+  font-family: $headingFont;
+  color: $deeppink;
+}
+h2 {
+  @include getDesiredFontSize(20);
+  font-family: $headingFont;
+  color: $myblack;
+}
+a {
+  color: $mywhite;
+}
+a:hover {
+  color: $myblack;
+}
+
+body {
+  font-family: $bodyFont;
+  color: $bodyColor;
+  @include getDesiredFontSize(16);
+  max-width: 100%;
+}
+input {
+  @include getDesiredFontSize(16);
+}
+button {
+  @include getDesiredFontSize(13);
+  background-color: #ff1493;
+  color: $mywhite !important;
+  padding: 10px 40px;
+  border-radius: 5px;
+}
+button:hover {
+  opacity: 0.9;
+}
+.container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.footer {
+  margin-top: 100px !important;
+}
