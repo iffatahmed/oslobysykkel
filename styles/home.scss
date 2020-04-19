@@ -5,8 +5,8 @@
     
     
     &-record{
-        padding: 10px 20px;
-        margin: 20px;
+        padding: 10px 15px;
+        margin: 10px 0px;
         -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
         -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
         box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
@@ -31,3 +31,39 @@
     color: $myred;
     padding-left: 10px;
 }
+.capacity{
+    font-size: 2em;
+}
+
+.parking::before{
+    content: '\f288';
+}
+
+
+
+// map
+
+// #map {
+//     position: absolute;
+//     top: 50px;
+//     bottom: 50px;
+//     width: 100%;
+//     left: 20px;
+//   }
+//   .marker {
+//     background-image: url('assets/bicycle-solid.svg');
+//     background-image: no-repeat;
+//     width: 50px;
+//     height: 40px;
+//     cursor: pointer;
+//     position:relative;
+//     z-index: 10;
+//   }
+//   .mapboxgl-popup {
+//     max-width: 200px;
+//   }
+
+//   .mapboxgl-popup-content {
+//     text-align: center;
+//     font-family: 'Open Sans', sans-serif;
+//   }

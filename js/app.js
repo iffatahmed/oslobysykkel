@@ -1,6 +1,14 @@
 
-// fetch open API data
+// Mapbox access token  
+// mapboxgl.accessToken = 'pk.eyJ1IjoiaWZmYXRhaG1lZCIsImEiOiJjazk2dnVleHUxMDI5M2VwdXJqd2JxeW5iIn0.phk9yizlmJI7G-UHhcvnxw';
+// var map = new mapboxgl.Map({
+//     container: 'map',
+//     style: 'mapbox://styles/iffatahmed/ck96vxfqc5iqk1ipmemif4039',
+//     center: [10.753316,59.910930],
+//     zoom: 12
+//   });
 
+// fetch open API data
 $.get('https://gbfs.urbansharing.com/oslobysykkel.no/gbfs.json', function(res, status){
     console.log(' data: ', res);
     console.log(' data: ', res.data.nb.feeds[0].url);
@@ -27,7 +35,19 @@ $.get('https://gbfs.urbansharing.com/oslobysykkel.no/gbfs.json', function(res, s
                 object = station_status.data.stations.find(o => Object.entries(o).some(([k, value]) => k === 'station_id' && value === station.station_id));
                 console.log('object', object.num_bikes_available);
                 // Create dynamic div for data
-                $('#station-record').append("<div class='[ station-record ]'><p style='float:right;'><i class='icon fa fa-bicycle'>x" +station.capacity+ " </i></p><p style='float:right;'><i class='icon-green icon fa fa-check-circle'>x" +object.num_bikes_available+ " </i><i class='icon-red icon fa fa-times-circle'>x" +object.num_docks_available+ " </i></p><h2>" + station.name + " </h2>"+ station.address +" <br><i class='icon fa fa-map-marker'> "+ station.lat.toFixed(2) + "," + station.lon.toFixed(2) +  "</i><p style='float:right;'>ID:" +station.station_id+ " </p></div>");
+                $('#station-record').append("<div class='[ col-sm-6 station-record ]'><div style='float:right;text-align:right;'><p><i class='icon fa fa-th-list'></i><span  class='[ capacity ]'>" +station.capacity+ " </span></p><i class='icon fa fa-bicycle'></i>Bikes: " +object.num_bikes_available+ " <br><i class=' icon parking fa '></i>Docks: " +object.num_docks_available+ "</div><div style='float:left;text-align:left;'><h4>" + station.name + " </h4>"+ station.address +" <br><i class='icon fa fa-map-marker'> "+ station.lat.toFixed(4) + "," + station.lon.toFixed(4) +  "</i></div></div>");
+
+                // create a HTML element for each feature
+                // var el = document.createElement('div');
+                // el.className = 'marker';
+
+                // // make a marker for each feature and add to the map
+                // new mapboxgl.Marker(el)
+                // .setLngLat([station.lon,station.lat])
+                // .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                //     .setHTML('<h3>' + station.name + '</h3><p>' + station.address + '</p>'))
+                // .addTo(map);
+
             });
         });
 
