@@ -1,69 +1,74 @@
 @import "variables";
 
-.station{
-    width: 90%;
-    
-    
-    &-record{
-        padding: 10px 15px;
-        margin: 10px 0px;
-        -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
-        -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-        box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-    }
+.station {
+  width: 90%;
+
+  &-record {
+    padding: 10px 15px;
+    margin: 10px 0px;
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  }
 }
-.contact{
-    text-align: center;
-    width: 100%;
-    margin-top: 70px;
-    
-    
+
+// CSS for inner content fetched from APIs
+#box {
+  &-left {
+    float: left;
+    text-align: left;
+  }
+  &-right {
+    float: right;
+    text-align: right;
+  }
 }
-.icon:before{
+
+.icon {
+  &:before {
     color: $deeppink;
     padding-left: 10px;
-}
-.icon-green:before{
-    color: $mygreen;
-    padding-left: 10px;
-}
-.icon-red:before{
+  }
+  &-red:before {
     color: $myred;
     padding-left: 10px;
-}
-.capacity{
+  }
+  &-green:before {
+    color: $mygreen;
+    padding-left: 10px;
+  }
+  &-capacity {
     font-size: 2em;
+  }
+  &-parking::before {
+    content: "\f288";
+  }
 }
 
-.parking::before{
-    content: '\f288';
+// Search input
+#find {
+  width: 90%;
+  border: 1px solid $deeppink;
 }
 
+// Contact secton
+.contact {
+  text-align: center;
+  width: 100%;
+  margin-top: 70px;
+}
 
-
-// map
-
-// #map {
-//     position: absolute;
-//     top: 50px;
-//     bottom: 50px;
-//     width: 100%;
-//     left: 20px;
-//   }
-//   .marker {
-//     background-image: url('assets/bicycle-solid.svg');
-//     background-image: no-repeat;
-//     width: 50px;
-//     height: 40px;
-//     cursor: pointer;
-//     position:relative;
-//     z-index: 10;
-//   }
-//   .mapboxgl-popup {
-//     max-width: 200px;
-//   }
-
-//   .mapboxgl-popup-content {
-//     text-align: center;
-//     font-family: 'Open Sans', sans-serif;
-//   }
+// Responsive design for JSON content
+@media screen and (max-width: 767px) {
+  #box-left {
+    float: none;
+  }
+  #box-right {
+    float: none;
+    text-align: left;
+    margin-top: 20px;
+  }
+  .fa-th-list {
+    margin-top: 30px;
+  }
+}

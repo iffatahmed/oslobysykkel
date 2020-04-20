@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8' />
+  <head>
+    <meta charset="utf-8" />
     <title></title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
     <link href="styles/styles.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="https://use.fontawesome.com/d7d2655c87.css" />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-
       #map {
         position: absolute;
         top: 15%;
@@ -28,7 +32,7 @@
         height: 75vh;
       }
       .marker {
-        background-image: url('assets/bicycle-solid.svg');
+        background-image: url("assets/bicycle-solid.svg");
         background-image: no-repeat;
         width: 25px;
         height: 20px;
@@ -41,67 +45,77 @@
 
       .mapboxgl-popup-content {
         text-align: center;
-        font-family: 'Open Sans', sans-serif;
+        font-family: "Open Sans", sans-serif;
         z-index: 21;
         background-color: white;
       }
-      .mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right, .mapboxgl-ctrl-top-left, .mapboxgl-ctrl-top-right{
+      .mapboxgl-ctrl-bottom-left,
+      .mapboxgl-ctrl-bottom-right,
+      .mapboxgl-ctrl-top-left,
+      .mapboxgl-ctrl-top-right {
         z-index: 20;
       }
-      .mapboxgl-popup-close-button{
+      .mapboxgl-popup-close-button {
         z-index: 23;
         color: black;
         padding: 0;
         padding-right: 10px;
       }
     </style>
-</head>
-<body>
-      <!-- header new section -->
-      <nav class="[ navbar navbar-inverse ]" style="position: relative;z-index: 20;">
-        <div class="navbar-header">
-          <button
-            class="navbar-toggle"
-            type="button"
-            data-toggle="collapse"
-            data-target=".js-navbar-collapse"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="[ brand-short navbar-brand  ]" href="#">BS</a>
-        </div>
-  
-        <div class="[ collapse navbar-collapse js-navbar-collapse ] ">
-          <div class="[ container-fluid ] ">
-            <div class="[ navbar-header  ]">
-              <a class="[  navbar-brand brand-long ]">Oslo Bysykkel</a>
-            </div>
-            <ul class="[ nav navbar-nav navbar ]">
-              <li><a href="index.html">EXPLORE</a></li>
-              <li><a href="map.html">MAP</a></li>
-              <li><a href="#">CONTACT</a></li>
-            </ul>
-  
-            <div class="[ search-component ]">
-              <form action="">
-                <input type="text" placeholder="Search.." name="search" />
-                <button type="submit">GO</button>
-              </form>
-            </div>
+  </head>
+  <body>
+    <!-- header new section -->
+    <nav
+      class="[ navbar navbar-inverse ]"
+      style="position: relative; z-index: 20;"
+    >
+      <div class="[ navbar-header ]">
+        <button
+          class="[ navbar-toggle ]"
+          type="button"
+          data-toggle="collapse"
+          data-target=".js-navbar-collapse"
+        >
+          <span class="[ sr-only ]">Toggle navigation</span>
+          <span class="[ icon-bar ]"></span>
+          <span class="[ icon-bar ]"></span>
+          <span class="[ icon-bar ]"></span>
+        </button>
+        <a class="[ brand-short navbar-brand ]" href="#">BS</a>
+      </div>
+
+      <div class="[ collapse navbar-collapse js-navbar-collapse ]">
+        <div class="[ container-fluid ]">
+          <div class="[ navbar-header ]">
+            <a class="[ navbar-brand brand-long ]">Oslo Bysykkel</a>
+          </div>
+          <ul class="[ nav navbar-nav navbar ]">
+            <li><a href="index.html">EXPLORE</a></li>
+            <li><a href="map.html">MAP</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+
+          <div class="[ search-component ]">
+            <form action="">
+              <input
+                type="text"
+                placeholder="Search.."
+                name="search"
+                id="search"
+              />
+              <button type="submit">GO</button>
+            </form>
           </div>
         </div>
-      </nav>
-  
-<div id='map'></div>
+      </div>
+    </nav>
 
+    <div id="map"></div>
 
     <!-- Footer section -->
     <section class="[ footer ]">
-      <div class="[ row ] ">
-        <div class=" [ col-sm-12 ] ">
+      <div class="[ row ]">
+        <div class="[ col-sm-12 ]">
           <div class="[ navbar navbar-fixed-bottom container ]">
             <div class="[ container-fluid ]">
               <div class="[ left ]">
@@ -110,18 +124,15 @@
                 <i class="[ fa fa-android ]"></i>
                 <i class="[ fa fa-apple ]"></i>
               </div>
-              <div class="[ right ]">
-                &copy; Iffat <span id="year"></span>
-              </div>
+              <div class="[ right ]">&copy; Iffat <span id="year"></span></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-
-<!-- JS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="js/map.js"></script>
-</body>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/map.js"></script>
+  </body>
 </html>

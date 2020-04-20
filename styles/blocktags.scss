@@ -28,18 +28,20 @@ input {
 }
 button {
   @include getDesiredFontSize(13);
-  background-color: #ff1493;
+  background-color: $deeppink;
   color: $mywhite !important;
   padding: 10px 40px;
   border-radius: 5px;
+  &:hover {
+    opacity: 0.9;
+  }
 }
-button:hover {
-  opacity: 0.9;
-}
+
 .container {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
 .footer {
   margin-top: 100px !important;
 }
